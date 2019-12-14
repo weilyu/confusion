@@ -5,6 +5,26 @@ class Dishdetail extends Component {
     constructor(props) {
         super(props);
     }
+
+    renderComments(comments) {
+        const cmt_disp = comments.map(cmt => {
+            const dateOptions = { year: 'numeric', month: 'short', day: '2-digit' };
+            const date_str = (new Date(cmt.date)).toLocaleDateString('en-US', dateOptions);
+            return (
+                <li>
+                    <p>{cmt.comment}</p>
+                    <p>-- {cmt.author} , {date_str}</p>
+                </li>
+            );
+        });
+        return (
+            <div>
+                <h4>Comments</h4>
+                <ul className="list-unstyled">{cmt_disp}</ul>
+            </div>
+        );
+    }
+
     render() {
         const dish = this.props.dish;
         if (dish == null) {
@@ -22,7 +42,7 @@ class Dishdetail extends Component {
                     </Card>
                 </div>
                 <div className="col-12 col-md-5 m-1">
-                    Some comments
+                    {this.renderComments(dish.comments)}
                 </div>
             </div >
         );
