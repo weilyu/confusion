@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import { CardImg, CardBody, CardTitle, Card, CardText } from "reactstrap";
 
 class Dishdetail extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     renderComments(comments) {
         const cmt_disp = comments.map(cmt => {
