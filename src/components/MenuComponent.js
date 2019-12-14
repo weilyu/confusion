@@ -1,7 +1,6 @@
 
-import { Media, Card, CardImg, CardImgOverlay, CardText, CardTitle, CardBody } from "reactstrap";
+import { Card, CardImg, CardImgOverlay, CardText, CardTitle, CardBody } from "reactstrap";
 import React, { Component } from "react";
-import { DISHES } from "../shared/dishes";
 
 class Menu extends Component {
 
